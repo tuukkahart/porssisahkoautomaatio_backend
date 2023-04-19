@@ -1,0 +1,26 @@
+{
+  "name": "kotiautomaatio_backend",
+  "version": "0.0.1",
+  "description": "backend kotiautomaatiojärjestelmälle",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "npm test"
+  },
+  "author": "Tuukka Hartikainen",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.3.5",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "fetch": "^1.1.0",
+    "mongoose": "^7.0.3",
+    "mqtt": "^4.3.7",
+    "node-cron": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
