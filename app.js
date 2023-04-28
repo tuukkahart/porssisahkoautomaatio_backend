@@ -30,5 +30,4 @@ app.use('/api/prices', pricesRouter)
 
 scheduledFunctions.initScheduledJobs;
 
-
 module.exports = app

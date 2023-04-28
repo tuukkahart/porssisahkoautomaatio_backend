@@ -5,7 +5,7 @@ const pricesRouter = require('Express').Router()
 pricesRouter.get('/', async (request, response) => {
     
     const prices = await Price.find({});
-    response.json(prices)
+    response.json(prices.sort((a,b) => new Date(a.startDate) - new Date(b.startDate)))
 
     
 })

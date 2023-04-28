@@ -1,0 +1,1 @@
+//scripti joka ymmärtää kelloa ja ajaa päivän planin mukaiset komennot laitteiden releille.
