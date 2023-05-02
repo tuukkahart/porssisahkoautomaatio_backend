@@ -20,15 +20,14 @@ devicesRouter.get('/:id', (request, response, next) => {
     .catch(error => next(error))
 })
 
-devicesRouter.post('/:id/relay', async (request, response, next) => {
+devicesRouter.put('/:id/relay', async (request, response, next) => {
   const device = await Device.findById(request.params.id)
-  const body = request.body
   if(device){
-    sendMQTTMessage(device.name, body.relay)
-    device.relay = body.relay
-    await device.save()
+    sendMQTTMessage(device.name, !device.relay)
+    device.relay = !device.relay
+    const savedDevice = await device.save()
 
-    response.send('Device status updated')
+    response.json(savedDevice)
   }
   else{
     response.send('cannot find device with id'+ request.params.id)
